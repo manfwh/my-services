@@ -6,7 +6,11 @@
   "dependencies": {
     "egg": "^2.2.1",
     "egg-alinode": "^2.0.1",
-    "egg-scripts": "^2.5.0"
+    "egg-multipart": "^2.0.0",
+    "egg-scripts": "^2.5.0",
+    "mz": "^2.7.0",
+    "stream-to-array": "^2.3.0",
+    "stream-wormhole": "^1.0.3"
   },
   "devDependencies": {
     "autod": "^3.0.1",
