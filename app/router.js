@@ -1,5 +1,3 @@
-
-
 /**
  * @param {Egg.Application} app - egg application
  */
@@ -10,5 +8,6 @@ module.exports = app => {
   // 人脸融合
   router.post('/api/rlrh', error, controller.ai.rlrh);
   // 花草识别
-  router.post('/api/hcsb', error, controller.ai.hcsb) 
+  router.post('/api/hcsb', error, controller.ai.hcsb);
+  router.get('/wx', controller.wx.index )
 };
