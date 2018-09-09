@@ -16,6 +16,7 @@ weChatController.prototype.wechat = wechat({
   appid: 'wx21d8e7672a056d28',
   encodingAESKey: 'QaPCJCEkazygiar2LQzUDBYTcGEMvzRbFR8kERR1BvD'
 }).middleware(async (message, ctx) => {
+  console.log(message)
   ctx.body = message
 });
 module.exports = weChatController;
