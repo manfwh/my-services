@@ -9,5 +9,5 @@ module.exports = app => {
   router.post('/api/rlrh', error, controller.ai.rlrh);
   // 花草识别
   router.post('/api/hcsb', error, controller.ai.hcsb);
-  router.get('/wx', controller.wx.index )
+  router.all('/wx', controller.wx.wechat);
 };
