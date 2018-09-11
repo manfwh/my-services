@@ -10,7 +10,8 @@ module.exports = appInfo => {
     appkey: 'LsrIDmkJXDOPbMfV',
     url: {
       rlrh: 'https://api.ai.qq.com/fcgi-bin/ptu/ptu_facemerge',
-      hcsb: 'https://api.ai.qq.com/fcgi-bin/vision/vision_imgidentify'
+      hcsb: 'https://api.ai.qq.com/fcgi-bin/vision/vision_imgidentify',
+      idcardocr: 'https://api.ai.qq.com/fcgi-bin/ocr/ocr_idcardocr'
     }
     
   }

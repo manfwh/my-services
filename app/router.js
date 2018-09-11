@@ -9,5 +9,7 @@ module.exports = app => {
   router.post('/api/rlrh', error, controller.ai.rlrh);
   // 花草识别
   router.post('/api/hcsb', error, controller.ai.hcsb);
+  // 身份证识别
+  router.post('/api/ocr_idcardocr', error, controller.ai.ocr_idcardocr);
   router.all('/wx', controller.wx.wechat);
 };
