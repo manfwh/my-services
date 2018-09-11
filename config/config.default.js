@@ -37,5 +37,9 @@ module.exports = appInfo => {
     path: path.join(__dirname, '../app/public/upload/'),
     url: '/public/upload/',
   };
+  config.wechat = {
+    appid: 'wx21d8e7672a056d28',
+    secret: '9015e309f5f64ef067a4036d23990aff',
+  }
   return config;
 };
