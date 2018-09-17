@@ -39,8 +39,8 @@ module.exports = appInfo => {
     url: '/public/upload/',
   };
   config.wechat = {
-    appid: 'wx21d8e7672a056d28',
-    secret: '9015e309f5f64ef067a4036d23990aff',
+    appid: 'wx261b909cbd356c4d',
+    secret: '1db42828962c03b04f5cf17065fd6cc5',
     token: 'shfwh'
   }
   return config;
