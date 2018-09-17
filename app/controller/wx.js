@@ -6,10 +6,11 @@ const wechat = require('co-wechat');
 const token = 'shfwh'
 class weChatController extends Controller {
   async index() {
-    var signature = ctx.request.body.signature;
-    var timestamp = ctx.request.body.timestamp;
-    var nonce = ctx.request.body.nonce;
-    var echostr = ctx.request.body.echostr;
+    var {ctx} = this;
+    var signature = ctx.query.signature;
+    var timestamp = ctx.query.timestamp;
+    var nonce = ctx.query.nonce;
+    var echostr = ctx.query.echostr;
     var array = new Array(token, timestamp, nonce);
     array.sort();
     var str = array.toString().replace(/,/g, "");
