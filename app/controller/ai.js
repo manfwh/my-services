@@ -72,6 +72,34 @@ class AiController extends Controller {
       }
     }
   }
+  async ocr_idcardocr() {
+    const { ctx, service, config } = this;
+    const stream = await ctx.getFileStream();
+    const options = {
+      app_id: config.ai.appid,
+      time_stamp:  parseInt(Date.now() / 1000),
+      nonce_str: '20e3408a79',
+      image: await ctx.service.image.base64(stream),
+      card_type: ctx.request.body.card_type
+    }
+    options.sign = await ctx.service.sign.getReqSign(options, config.ai.appkey);
+    const res = await ctx.curl(config.ai.url.idcardocr, {
+      method: 'POST',
+      data: options,
+      dataType: 'json',
+    });
+    if (res.data.ret == 0) {
+      const data = res.data.data;
+      ctx.body = {
+        ret: 0,
+        data
+      };
+    } else {
+      ctx.body = {
+        ret: res.data.ret
+      }
+    }
+  }
 }
 
 module.exports = AiController;

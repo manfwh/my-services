@@ -41,6 +41,7 @@ module.exports = appInfo => {
   config.wechat = {
     appid: 'wx21d8e7672a056d28',
     secret: '9015e309f5f64ef067a4036d23990aff',
+    token: 'shfwh'
   }
   return config;
 };

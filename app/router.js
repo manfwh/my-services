@@ -11,5 +11,5 @@ module.exports = app => {
   router.post('/api/hcsb', error, controller.ai.hcsb);
   // 身份证识别
   router.post('/api/ocr_idcardocr', error, controller.ai.ocr_idcardocr);
-  router.all('/wx', controller.wx.wechat);
+  router.get('/wx', controller.wx.index )
 };
