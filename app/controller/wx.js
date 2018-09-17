@@ -6,7 +6,8 @@ const wechat = require('co-wechat');
 const token = 'shfwh'
 class weChatController extends Controller {
   async page() {
-    this.ctx.body = 'page'
+
+    this.ctx.body = this.ctx.query
   }
   async index() {
     var {ctx} = this;
