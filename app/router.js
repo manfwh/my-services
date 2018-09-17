@@ -6,6 +6,7 @@ module.exports = app => {
   const { router, controller } = app;
   const error = app.middleware.errMsg({ errMsg: errorMsg });
   // 人脸融合
+  router.get('/', controller.wx.page)
   router.post('/api/rlrh', error, controller.ai.rlrh);
   // 花草识别
   router.post('/api/hcsb', error, controller.ai.hcsb);

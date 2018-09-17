@@ -5,6 +5,9 @@ const crypto = require('crypto')
 const wechat = require('co-wechat');
 const token = 'shfwh'
 class weChatController extends Controller {
+  async page() {
+    this.ctx.body = 'page'
+  }
   async index() {
     var {ctx} = this;
     var signature = ctx.query.signature;
@@ -25,6 +28,7 @@ class weChatController extends Controller {
     }
   }
 }
+
 // 因为 Egg 需要用类的形式来组织，而 wechat 是通过 middleware 方法来生成中间件
 weChatController.prototype.wechat = wechat({
   token,
