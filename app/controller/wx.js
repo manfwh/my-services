@@ -6,9 +6,15 @@ const wechat = require('co-wechat');
 const token = 'shfwh'
 class weChatController extends Controller {
   async page() {
-
-    this.ctx.body = this.ctx.query
-  }
+  	const {ctx} = this;
+  	const code = ctx.query.code;
+  	const res = await ctx.curl('https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx261b909cbd356c4d&secret=1db42828962c03b04f5cf17065fd6cc5&code='+code+'&grant_type=authorization_code')
+    ctx.body = res.data.access_token
+    return
+    // const {openid, access_token} = res.data.data;
+    // const userInfo = await ctx.curl(`https://api.weixin.qq.com/sns/userinfo?access_token=${access_token}&openid=${openid}&lang=zh_CN`)
+    // ctx.body = userInfo.data
+  } 
   async index() {
     var {ctx} = this;
     var signature = ctx.query.signature;
